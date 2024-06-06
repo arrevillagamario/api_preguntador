@@ -41,6 +41,7 @@ export const login = async (req, res) => {
       rol: userFound.rol,
       username: userFound.username,
       email: userFound.email,
+      message: "Login exitoso",
     });
   } catch (error) {
     console.log(error);
