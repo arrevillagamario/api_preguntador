@@ -29,3 +29,14 @@ export const getPreguntas = async (req, res) => {
 
   res.json(PreguntasTotales);
 };
+
+export const getPreguntasPorCategoria = async (req, res) => {
+  const { categoria } = req.params;
+  try {
+    const preguntas = await Preguntas.find({ categoria });
+    res.json(preguntas);
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Error al obtener las preguntas");
+  }
+};

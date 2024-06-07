@@ -47,3 +47,8 @@ export const login = async (req, res) => {
     console.log(error);
   }
 };
+export const getUsuarios = async (req, res) => {
+  const usuarios = await User.find();
+
+  res.json(usuarios);
+};
